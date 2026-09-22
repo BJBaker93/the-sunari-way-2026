@@ -28,3 +28,19 @@ h2{font-family:var(--type);font-weight:500;font-size:clamp(62px,7vw,100px);line-
 .event-header,.introduction{position:relative;z-index:1}
 @media(max-width:700px){.ribbon-image{transform:scale(2.25)}}
 @media print{.graphic-space{height:70px;margin-bottom:0}.ribbon-image{display:none}}
+
+/* Expanded programme rows: a clear hierarchy inspired by the supplied reference. */
+details.session[open]{box-shadow:inset 4px 0 #ff6c22}
+.session[open] summary h4{font-weight:600}
+.session[open] .expand-icon::before{transform:translateY(1px) rotate(225deg)}
+.session-detail{max-width:none;padding:0 30px 36px;line-height:1.5}
+.session-section{border-top:1px solid var(--rule);padding:26px 0 30px}
+.session-section:last-child{padding-bottom:0}
+.session-section h5{font:inherit;font-weight:700;line-height:1.3;margin:0 0 20px}
+.session-section p{margin:0 0 24px}
+.session-section p:last-child{margin-bottom:0}
+.session-speaker-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.session-speaker-card{padding:20px 22px;background:#0000000c;border-radius:5px}
+.session-speaker-card .session-speaker-name{font-weight:600;line-height:1.3;margin:0}
+.session-speaker-card .session-speaker-role{font-size:14px;line-height:1.45;margin:6px 0 0}
+@media(max-width:700px){.session-detail{padding:0 18px 28px 16px}.session-section{padding:24px 0 28px}.session-section h5{margin-bottom:18px}.session-speaker-card{padding:18px 16px}}
