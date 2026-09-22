@@ -22,12 +22,10 @@ h2{font-family:var(--type);font-weight:500;font-size:clamp(62px,7vw,100px);line-
 .agenda,.speakers{font-weight:500}.session,.session-inline,.day-heading,.day-heading p,.speaker-role{letter-spacing:-.06em}.session-time,.day-date{font-weight:500;letter-spacing:-.065em}.day-title,.speaker h3{font-weight:500;letter-spacing:-.065em}.speaker h3{overflow-wrap:break-word}
 @media(max-width:360px){h2{font-size:58px}}
 
-/* Supplied transparent ribbon artwork, enlarged behind the opening theme. */
-.graphic-space{position:relative;z-index:0;width:100vw;margin-inline:calc((100% - 100vw)/2);margin-bottom:-40px;height:clamp(265px,40vw,560px);overflow:hidden}
-.ribbon-image{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.2)}
-.event-header,.introduction{position:relative;z-index:1}
-@media(max-width:700px){.ribbon-image{transform:scale(2.25)}}
-@media print{.graphic-space{height:70px;margin-bottom:0}.ribbon-image{display:none}}
+/* Reserved space for the Sunari artwork. */
+.graphic-space{height:clamp(225px,calc(40vw - 40px),520px);display:grid;place-items:center;text-align:center}
+.graphic-space p{margin:0;font-family:var(--type);font-size:12px;font-weight:500;line-height:1.4;letter-spacing:-.04em;color:#000}
+@media print{.graphic-space{height:70px}}
 
 /* Expanded programme rows: a clear hierarchy inspired by the supplied reference. */
 details.session[open]{box-shadow:inset 4px 0 #ff6c22}
