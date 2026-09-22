@@ -22,12 +22,9 @@ h2{font-family:var(--type);font-weight:500;font-size:clamp(62px,7vw,100px);line-
 .agenda,.speakers{font-weight:500}.session,.session-inline,.day-heading,.day-heading p,.speaker-role{letter-spacing:-.06em}.session-time,.day-date{font-weight:500;letter-spacing:-.065em}.day-title,.speaker h3{font-weight:500;letter-spacing:-.065em}.speaker h3{overflow-wrap:break-word}
 @media(max-width:360px){h2{font-size:58px}}
 
-/* Supplied ribbon animation, composited onto the page's white background. */
+/* Supplied transparent ribbon artwork, enlarged behind the opening theme. */
 .graphic-space{position:relative;z-index:0;width:100vw;margin-inline:calc((100% - 100vw)/2);margin-bottom:-40px;height:clamp(265px,40vw,560px);overflow:hidden}
-.ribbon-video{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.2);background:#fff}
+.ribbon-image{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.2)}
 .event-header,.introduction{position:relative;z-index:1}
-@media(max-width:700px){.ribbon-video{transform:scale(1.65)}}
-.motion-toggle{position:absolute;right:max(24px,calc((100vw - 1000px)/2));bottom:18px;width:30px;height:30px;border:1px solid #d5d5d5;border-radius:50%;background:#fffffff2;color:#666;display:grid;place-items:center;cursor:pointer;opacity:.55;transition:opacity 200ms ease}
-.motion-toggle[hidden]{display:none}.motion-toggle:hover,.motion-toggle:focus-visible{opacity:1}.motion-toggle:focus-visible{outline:2px solid #111;outline-offset:4px}
-.motion-toggle span{width:7px;height:9px;border-left:2px solid currentColor;border-right:2px solid currentColor}.motion-toggle.is-paused span{width:0;height:0;border:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:7px solid currentColor;margin-left:2px}
-@media print{.graphic-space{height:70px}.ribbon-video,.motion-toggle{display:none}}
+@media(max-width:700px){.ribbon-image{transform:scale(2.25)}}
+@media print{.graphic-space{height:70px;margin-bottom:0}.ribbon-image{display:none}}

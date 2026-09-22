@@ -1,41 +1,6 @@
 (() => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  const video = document.querySelector('.ribbon-video');
-  const motionToggle = document.querySelector('.motion-toggle');
-  if (video && motionToggle) {
-    let userPaused = reduced.matches;
-    let visible = true;
-    const syncButton = () => {
-      motionToggle.classList.toggle('is-paused', video.paused);
-      motionToggle.setAttribute('aria-label', video.paused ? 'Play animation' : 'Pause animation');
-    };
-    const syncPlayback = () => {
-      if (userPaused || !visible || document.hidden) video.pause();
-      else video.play().catch(syncButton);
-      syncButton();
-    };
-    motionToggle.hidden = false;
-    motionToggle.addEventListener('click', () => {
-      userPaused = !video.paused;
-      syncPlayback();
-    });
-    video.addEventListener('play', syncButton);
-    video.addEventListener('pause', syncButton);
-    reduced.addEventListener('change', () => {
-      userPaused = reduced.matches;
-      syncPlayback();
-    });
-    document.addEventListener('visibilitychange', syncPlayback);
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(entries => {
-        visible = entries[0].isIntersecting;
-        syncPlayback();
-      }).observe(video);
-    }
-    syncPlayback();
-  }
-
   // Preserve native details semantics, including keyboard activation.
   document.querySelectorAll('details.session').forEach(details => {
     const summary = details.querySelector('summary');
